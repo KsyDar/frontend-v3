@@ -1,0 +1,65 @@
+@use 'sass:list';
+@use 'sass:string';
+
+// Пример использования можно посмотреть в файле src/modules/tests/views/TestsList.vue
+
+// Функция для генерации классов численных css-свойств (типа margin, padding, width, height)
+// Принимает в себя:
+// class -название класса - будет использоваться в качестве основы для классов (например: 'mr')
+// attr - css-свойство, которое будет регулироваться классами (например: 'margin-right')
+// attr-count - количество классов, которое нужно сгенерировать (например: 5, будут сгенерированы классы .mr-1, ..., .mr-5)
+// attr-steps - шаг между классами (например: 1, для класса .mr-1 margin-right: 1rem, для .mr-2 margin-right: 2rem и т д)
+// unit - единицы измерения (например: 'rem' или 'px')
+// addZero - флаг, говорящий, нужно ли добавлять ноль в css-свойство:
+// // 'none' - не нужно, получим margin: 1rem;
+// // 'first' - добавить в начало, получим margin: 0 1rem;
+// // 'second' - добавить в конец, получим margin: 1rem 0;
+@mixin attr_x(
+  $class,
+  $attr,
+  $attr-count: 10,
+  $attr-steps: 10,
+  $unit: '%',
+  $addZero: 'none'
+) {
+  @for $i from 0 through $attr-count {
+    $attr-value: $attr-steps * $i;
+
+    @if $addZero == 'first' {
+      .#{$class}-#{$i} {
+        #{$attr}: 0 #{$attr-value}#{$unit};
+      }
+    } @else if $addZero == 'second' {
+      .#{$class}-#{$i} {
+        #{$attr}: #{$attr-value}#{$unit} 0;
+      }
+    } @else {
+      .#{$class}-#{$i} {
+        #{$attr}: #{$attr-value}#{$unit};
+      }
+    }
+  }
+
+  @if $addZero == 'first' {
+    .#{$class}-auto {
+      #{$attr}: 0 auto;
+    }
+  } @else if $addZero == 'second' {
+    .#{$class}-auto {
+      #{$attr}: auto 0;
+    }
+  } @else {
+    .#{$class}-auto {
+      #{$attr}: auto;
+    }
+  }
+}
+
+$spaces: [[ml, margin-left], [mt, margin-top], [mb, margin-bottom], [mr,
+  margin-right], [mx, margin], [my, margin], [ma, margin], [pl, padding-left],
+  [pr, padding-right], [pt, padding-top], [pb, padding-bottom], [px, padding],
+  [py, padding], [pa, padding]];
+
+@each $item in $spaces {
+  @include attr_x(list.nth($item, 1), list.nth($item, 2), 40, 0.2, 'rem');
+}
