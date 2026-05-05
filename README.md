@@ -1,5 +1,15 @@
-# Vue 3 + TypeScript + Vite
+# Структура проекта
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Вариант 1
+- `/assets`: стили, шрифты и другие статические ресурсы
+- `/modules`: модули приложения
+- `/platform`: инфраструктурные вещи, не связанные с бизнес-логикой
+- `/shared`: общие компоненты и функции для всего приложения
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+
+## Вариант 2
+- `/assets`: стили, шрифты и другие статические ресурсы
+- `/app`: основной код приложения:
+  - `/modules`: модули приложения
+  - `/shared`: общие компоненты и функции для всего приложения
+- `/platform`: инфраструктурные вещи, не связанные с бизнес-логикой
