@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
-import { useModule } from "@/platform/composables";
-import { createAppMeta } from "@/platform/router";
+import { useModule } from "@/app/composables";
+import { createAppMeta } from "@/app/router";
 
 const TestsList = () => import('./views/TestsList.vue')
 const TestEdit = () => import('./views/TestEdit.vue')

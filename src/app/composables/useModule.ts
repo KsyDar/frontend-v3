@@ -1,6 +1,6 @@
 import type { Router, RouteRecordName, RouteRecordRaw } from 'vue-router'
 
-import { useAddRoutes } from '@/platform/composables/useAddRoutes'
+import { useAddRoutes } from '@/app/composables/useAddRoutes'
 
 export interface ModuleOptions {
   name: string

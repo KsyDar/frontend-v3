@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
 import { modules } from "@/modules";
 
-import { createModules } from "@/platform/plugins";
-import router from "@/platform/router";
-import store from "@/platform/store";
+import { createModules } from "@/app/plugins";
+import router from "@/app/router";
+import store from "@/app/store";
 
-import '@/assets/styles/main.scss'
-import App from './App.vue'
+import '@/shared/assets/styles/main.scss';
+import App from './App.vue';
 
 createApp(App)
   .use(store)

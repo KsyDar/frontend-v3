@@ -12,7 +12,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/assets/styles/mixins/media_mixin" as *;`
+        additionalData: `@use "@/shared/assets/styles/mixins/media_mixin" as *;`
       }
     }
   }
