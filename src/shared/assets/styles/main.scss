@@ -1,6 +1,7 @@
 @use 'mixins/generate_classes_mixin';
 @use 'mixins/media_mixin' as *;
 @use 'variables';
+@import 'primeicons/primeicons.css';
 
 #app {
   position: relative;
