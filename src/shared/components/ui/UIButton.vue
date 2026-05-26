@@ -44,12 +44,10 @@ const rootScheme = ref({
 </template>
 
 <style scoped>
-/** Вариант 2
-//.p-button {
-//  --p-button-primary-background: #344DD3;
-//} */
-
-.p-button.p-button-lg {
-  gap: 20px;
-}
+/* Вариант 2 - перекрытие в своем слое
+@layer app-styles {
+  .p-button {
+    background: red;
+  }
+} */
 </style>

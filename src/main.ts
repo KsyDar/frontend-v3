@@ -68,7 +68,7 @@ createApp(App)
         cssLayer: {
           name: 'primevue',
           // Чтобы стили приложения были приоритетнее стилей primevue
-          order: 'app-styles, primevue, another-css-library'
+          order: 'primevue, app-styles'
         }
       }
     }

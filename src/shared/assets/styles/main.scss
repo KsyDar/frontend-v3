@@ -3,6 +3,8 @@
 @use 'variables';
 @import 'primeicons/primeicons.css';
 
+@layer app-styles;
+
 #app {
   position: relative;
   overflow: hidden;
